@@ -26,13 +26,7 @@ class LoginPage:
     def clickLoginButton(self):
         self.driver.find_element(*self.__loginButton).click()
 
-    def checkIfError(self):
-        if self.driver.find_element(*self.__errorButton):
-            self.driver.find_element(*self.__errorButton).click()
 
-            return False
-        else:
-            return True
 
 
 
