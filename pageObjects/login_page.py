@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.webdriver import WebDriver # temp for autocomplete
+from selenium.webdriver.chrome.webdriver import WebDriver # temp
 
 
 class LoginPage:
