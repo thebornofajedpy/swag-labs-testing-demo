@@ -1,2 +1,2 @@
 # swag-labs-testing-demo
-Testing demo
+Sample testing code that follows the POM approach. 
