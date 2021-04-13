@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+import selenium.webdriver.support.expected_conditions as EC
 
 
 
@@ -32,7 +34,8 @@ class Inventory:
         self.driver.find_element(*self.__resetAppState).click()
 
     def clickCloseX(self):
-        self.driver.find_element(*self.__close).click()
+        WebDriverWait(self.driver,5).until(EC.visibility_of_element_located(self.__close)).click()
+        # self.driver.find_element(*self.__close).click()
 
     def clickAllCartButtons(self):
         elements = self.driver.find_elements(*self.__cartButtons)
