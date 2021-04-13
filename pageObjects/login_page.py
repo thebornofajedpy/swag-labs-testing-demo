@@ -1,15 +1,18 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.webdriver import WebDriver # temp
 
 
 class LoginPage:
+    __url = "https://www.saucedemo.com/"
     __username = (By.CSS_SELECTOR, "input#user-name")
     __password = (By.CSS_SELECTOR, "input#password")
     __loginButton = (By.CSS_SELECTOR, "input#login-button")
     __errorButton = (By.CSS_SELECTOR, "button.error-button")
 
     def __init__(self, driver):
-        self.driver: WebDriver = driver
+        self.driver = driver
+
+    def goToLoginPage(self):
+        self.driver.get(self.__url)
 
     def setUsername(self,username):
         e = self.driver.find_element(*self.__username)

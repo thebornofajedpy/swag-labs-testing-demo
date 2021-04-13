@@ -5,7 +5,6 @@ from selenium import webdriver
 
 driver = None
 
-
 @pytest.fixture(scope="class")
 def setup(request):
     global driver
@@ -45,4 +44,8 @@ def invalid_login_data(request):
     params=[("standard_user", "secret_sauce"), ("problem_user", "secret_sauce"),
             ("performance_glitch_user", "secret_sauce")])
 def valid_login_data(request):
+    return request.param
+
+@pytest.fixture(params=[("standard_user", "secret_sauce")])
+def standard_user_cred(request):
     return request.param
